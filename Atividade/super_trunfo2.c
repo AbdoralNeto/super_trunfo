@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <locale.h>
 
+//funções para calcular a densidade demografica e o pib percapita de cada cidade
+float calcular_densDemo(float num1, float num2){
+    return num1/num2;
+}
+
+float calcular_pibPercapita(float num1, float num2){
+    return num1/num2;
+}
+
+
 int main(){
 
     setlocale(LC_ALL, "Portuguese");
@@ -81,11 +91,12 @@ int main(){
     scanf("%d", &num_pontos_turistico2);
     fflush(stdin);
 
-    dens_populacional = (float)populacao / area;
-    pib_perCapita = (float)pib / populacao;
-    
-    dens_populacional2 = (float)populacao2 / area2;
-    pib_perCapita2 = (float)pib2 / populacao2;
+    dens_populacional = calcular_densDemo(populacao, area);
+    pib_perCapita = calcular_pibPercapita(pib, populacao);
+
+    dens_populacional2 =calcular_densDemo(populacao2, area2);
+    pib_perCapita2 = calcular_pibPercapita(pib2,populacao2);
+
 
     system("cls");
      //Exibe o resultado das cartas cadastradas
