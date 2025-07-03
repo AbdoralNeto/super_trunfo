@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <locale.h>
 
 int main(){
 
-    char estado, codigo_da_carta[5], nome_cidade[20], estado2, codigo_da_carta2[5], nome_cidade2[20];
+    setlocale(LC_ALL, "Portuguese");
+
+    char estado, codigo_da_carta[10], nome_cidade[30], estado2, codigo_da_carta2[10], nome_cidade2[30];
     int populacao, num_pontos_turistico, populacao2, num_pontos_turistico2;
     float area, pib, area2, pib2;
 
@@ -12,79 +14,93 @@ int main(){
     fazendo uso de uma estrutura simples, e utilizando o que foi aprendido até agora,
     fazendo o uso de entrada e saída de dados via teclado.
     */
-
+    //Cadastra a 1° carta
     printf("|------------------------|");
     printf("\n|--------CARTA 1---------|");
     printf("\n|------------------------|");
 
     printf("\nDigite um estado: ");  
     scanf(" %c",&estado);
+    fflush(stdin);
 
-    printf("\nDigite o codigo da carta: ");
-    scanf(" %s",codigo_da_carta);
+    printf("Digite o codigo da carta: ");
+    fgets(codigo_da_carta, 10, stdin);
+    fflush(stdin);
 
-    printf("\nDigite o nome da cidade: ");
-    scanf(" %s",nome_cidade);
+    printf("Digite o nome da cidade: ");
+    fgets(nome_cidade, 30, stdin);
+    fflush(stdin);
 
-    printf("\nDigite a populacao: ");
+    printf("Digite a populacao: ");
     scanf(" %d", &populacao);
+    fflush(stdin);
 
-    printf("\nDigite a Area: ");
+    printf("Digite a Area: ");
     scanf(" %f", &area);
+    fflush(stdin);
 
-    printf("\nDigite o PIB: ");
+    printf("Digite o PIB: ");
     scanf(" %f", &pib);
+    fflush(stdin);
 
-    printf("\nDigite o N° de Pontos turisticos: ");
+    printf("Digite o N° de Pontos turisticos: ");
     scanf(" %d", &num_pontos_turistico);
+    fflush(stdin);
 
-    system("cls"); //system("cls") - para limpeza de tela e melhorar a interatividade com usuário.
-
-     printf("|------------------------|");
+    system("cls");
+    //Cadastra a carta 2
+    printf("|------------------------|");
     printf("\n|--------CARTA 2---------|");
     printf("\n|------------------------|");
 
     printf("\nDigite um estado: ");
     scanf(" %c",&estado2);
+    fflush(stdin);
 
-    printf("\nDigite o codigo da carta: ");
-    scanf("%s",codigo_da_carta2);
+    printf("Digite o codigo da carta: ");
+    fgets(codigo_da_carta2, 10, stdin);
+    fflush(stdin);
 
-    printf("\nDigite o nome da cidade: ");
-    scanf("%s",nome_cidade2);
+    printf("Digite o nome da cidade: ");
+    fgets(nome_cidade2, 30, stdin);
+    fflush(stdin);
 
-    printf("\nDigite a populacao: ");
+    printf("Digite a populacao: ");
     scanf("%d", &populacao2);
+    fflush(stdin);
 
-    printf("\nDigite a Area: ");
+    printf("Digite a Area: ");
     scanf("%f", &area2);
+    fflush(stdin);
 
-    printf("\nDigite o PIB: ");
+    printf("Digite o PIB: ");
     scanf("%f", &pib2);
+    fflush(stdin);
 
-    printf("\nDigite o N° de Pontos turisticos: ");
+    printf("Digite o N° de Pontos turisticos: ");
     scanf("%d", &num_pontos_turistico2);
+    fflush(stdin);
 
     system("cls");
-
-    printf("Carta1");
-    printf("\nEstado: %c",estado);
-    printf("\nCodigo da carta: %c%s", estado, codigo_da_carta);
-    printf("\nNome da cidade: %s", nome_cidade);
-    printf("\nPopulacao: %d", populacao);
-    printf("\nArea: %.2f",area);
-    printf("\nPIB: %.2f",pib);
-    printf("\nNumero de Pontos Turisticos: %d",num_pontos_turistico);
+     //Exibe o resultado das cartas cadastradas
+    printf("Carta1\n");
+    printf("Estado: %c\n",estado);
+    printf("Codigo da carta: %c%s", estado, codigo_da_carta);
+    printf("Nome da cidade: %s", nome_cidade);
+    printf("Populacao: %d\n", populacao);
+    printf("Area: %.2f Km²\n",area);
+    printf("PIB: %.2f\n",pib);
+    printf("Numero de Pontos Turisticos: %d\n",num_pontos_turistico);
 
     printf("\n");
-    printf("\nCarta2");
-    printf("\nEstado: %c",estado2);
-    printf("\nCodigo da carta: %c%s", estado2, codigo_da_carta2);
-    printf("\nNome da cidade: %s", nome_cidade2);
-    printf("\nPopulacao: %d", populacao2);
-    printf("\nArea: %.2f",area2);
-    printf("\nPIB: %.2f",pib2);
-    printf("\nNumero de Pontos Turisticos: %d",num_pontos_turistico2);
+    printf("Carta2\n");
+    printf("Estado: %c\n",estado2);
+    printf("Codigo da carta: %c%s", estado2, codigo_da_carta2);
+    printf("Nome da cidade: %s", nome_cidade2);
+    printf("Populacao: %d\n", populacao2);
+    printf("Area: %.2f km²\n",area2);
+    printf("PIB: %.2f\n",pib2);
+    printf("Numero de Pontos Turisticos: %d\n",num_pontos_turistico2);
 
     return 0;
 }
