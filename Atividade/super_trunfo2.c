@@ -8,7 +8,7 @@ int main(){
 
     char estado, codigo_da_carta[10], nome_cidade[30], estado2, codigo_da_carta2[10], nome_cidade2[30];
     int populacao, num_pontos_turistico, populacao2, num_pontos_turistico2;
-    float area, pib, area2, pib2;
+    float area, pib, area2, pib2, dens_populacional,pib_perCapita,dens_populacional2,pib_perCapita2;
 
     /*Código simples como pediu o enunciado no desafio,
     fazendo uso de uma estrutura simples, e utilizando o que foi aprendido até agora,
@@ -81,6 +81,12 @@ int main(){
     scanf("%d", &num_pontos_turistico2);
     fflush(stdin);
 
+    dens_populacional = (float)populacao / area;
+    pib_perCapita = (float)pib / populacao;
+    
+    dens_populacional2 = (float)populacao2 / area2;
+    pib_perCapita2 = (float)pib2 / populacao2;
+
     system("cls");
      //Exibe o resultado das cartas cadastradas
     printf("Carta1\n");
@@ -91,6 +97,8 @@ int main(){
     printf("Area: %.2f Km²\n",area);
     printf("PIB: %.2f\n",pib);
     printf("Numero de Pontos Turisticos: %d\n",num_pontos_turistico);
+    printf("Densidade Populacional: %.2f hab/km²\n",dens_populacional);
+    printf("PIB per Capita: %.2f\n",pib_perCapita);
 
     printf("\n");
     printf("Carta2\n");
@@ -101,6 +109,8 @@ int main(){
     printf("Area: %.2f km²\n",area2);
     printf("PIB: %.2f\n",pib2);
     printf("Numero de Pontos Turisticos: %d\n",num_pontos_turistico2);
+    printf("Densidade Populacional: %.2f hab/km²\n",dens_populacional2);
+    printf("PIB per Capita: %.2f\n",pib_perCapita2);
 
     return 0;
 }
